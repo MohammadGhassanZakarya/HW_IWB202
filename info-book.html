@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="Ghassan" content="Mohammad Ghassan Zakaria">
+    <title>About Us</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="direction: rtl;">
+    <div class="contant">
+        <nav class="nav">
+            <a href="index.html">الرئيسية</a> |
+            <a href="books.html">الكتب </a> |
+            <a href="about-us.html">من نحن</a>
+        </nav>
+    </div>
+    <div class="contant">
+        <h1 style="color: chocolate;">info Pay book</h1>
+        <div id="infoDiv"></div>
+    </div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const firstname = urlParams.get('firstname');
+        const snum = urlParams.get('snum');
+        const phone = urlParams.get('phone');
+        const email = urlParams.get('email');
+        const num_book = urlParams.get('num_book');
+        const title_book = urlParams.get('title_book');
+        const sal_book = urlParams.get('sal_book');
+
+        console.log('firstname:', firstname);
+        console.log('snum:', snum);
+        console.log('phone:', phone);
+        console.log('email:', email);
+        console.log('num_book:', num_book);
+        console.log('title_book:',title_book);
+        console.log('sal_book:', sal_book);
+
+        const infoDiv = document.getElementById('infoDiv');
+
+        infoDiv.innerHTML = `
+            <h3 style="color:green;">تم سجيل طلبك بنجاح  </h3>
+            <p>الاسم الأول: ${firstname}</p>
+            <p>الرقم التسلسلي: ${snum}</p>
+            <p>الهاتف: ${phone}</p>
+            <p>البريد الإلكتروني: ${email}</p>
+            <p>رقم الكتاب: ${num_book}</p>
+            <p>عنوان الكتاب: ${title_book}</p>
+            <p>سعر الكتاب: ${sal_book}</p>
+        `;
+        
+    </script>
+</body>
+
+</html>
